@@ -1,4 +1,6 @@
 import chalk from "chalk"
+import os from "os"
+import path from "path"
 import {
 	aptFaucetUrl,
 	cliDocsUrl,
@@ -13,7 +15,7 @@ import { cmd, url } from "./util/format"
 import writeFile from "./util/write-file"
 
 const shelbyCLIDocsUrl = url(cliDocsUrl)
-const configPath = `${process.env.HOME}/.shelby/config.yaml`
+const configPath = path.join(os.homedir(), ".shelby", "config.yaml")
 
 const config = envCheck(configPath)
 
